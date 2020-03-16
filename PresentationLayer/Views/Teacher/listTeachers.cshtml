@@ -19,6 +19,7 @@
         <td>@item.id_teacher</td>
         <td>@item.first</td>
         <td>@item.last</td>
+        <td>@Html.ActionLink("Actualizar", "EditTeacher", "Teacher", null, new { idTeacher = item.id_teacher })</td>
     </tr>
     }
 </table>

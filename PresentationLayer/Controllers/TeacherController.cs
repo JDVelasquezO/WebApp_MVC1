@@ -53,5 +53,10 @@ namespace PresentationLayer.Controllers
 
             return Content(script);
         }
+
+        public ActionResult EditTeacher(int idTeacher)
+        {
+            return View(teacherLogic.searchTeacher(idTeacher));
+        }
     }
 }
