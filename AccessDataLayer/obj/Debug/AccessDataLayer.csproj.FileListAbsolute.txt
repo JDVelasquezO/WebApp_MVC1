@@ -1,0 +1,9 @@
+C:\Users\JDVelasquezO\source\repos\AppMVC\AccessDataLayer\bin\Debug\AccessDataLayer.dll
+C:\Users\JDVelasquezO\source\repos\AppMVC\AccessDataLayer\bin\Debug\AccessDataLayer.pdb
+C:\Users\JDVelasquezO\source\repos\AppMVC\AccessDataLayer\bin\Debug\EntityLayer.dll
+C:\Users\JDVelasquezO\source\repos\AppMVC\AccessDataLayer\bin\Debug\EntityLayer.pdb
+C:\Users\JDVelasquezO\source\repos\AppMVC\AccessDataLayer\obj\Debug\AccessDataLayer.csprojAssemblyReference.cache
+C:\Users\JDVelasquezO\source\repos\AppMVC\AccessDataLayer\obj\Debug\AccessDataLayer.csproj.CoreCompileInputs.cache
+C:\Users\JDVelasquezO\source\repos\AppMVC\AccessDataLayer\obj\Debug\AccessDataLayer.csproj.CopyComplete
+C:\Users\JDVelasquezO\source\repos\AppMVC\AccessDataLayer\obj\Debug\AccessDataLayer.dll
+C:\Users\JDVelasquezO\source\repos\AppMVC\AccessDataLayer\obj\Debug\AccessDataLayer.pdb

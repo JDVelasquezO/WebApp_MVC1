@@ -1,0 +1,6 @@
+C:\Users\JDVelasquezO\source\repos\AppMVC\EntityLayer\bin\Debug\EntityLayer.dll
+C:\Users\JDVelasquezO\source\repos\AppMVC\EntityLayer\bin\Debug\EntityLayer.pdb
+C:\Users\JDVelasquezO\source\repos\AppMVC\EntityLayer\obj\Debug\EntityLayer.csprojAssemblyReference.cache
+C:\Users\JDVelasquezO\source\repos\AppMVC\EntityLayer\obj\Debug\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\JDVelasquezO\source\repos\AppMVC\EntityLayer\obj\Debug\EntityLayer.dll
+C:\Users\JDVelasquezO\source\repos\AppMVC\EntityLayer\obj\Debug\EntityLayer.pdb
