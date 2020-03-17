@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -108,6 +109,8 @@
     <Content Include="Views\Teacher\AddTeachers.cshtml" />
     <Content Include="Views\Teacher\EditTeacher.cshtml" />
     <Content Include="Views\View.cshtml" />
+    <Content Include="Views\Course\ListCourse.cshtml" />
+    <Content Include="Views\Course\AddCourse.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

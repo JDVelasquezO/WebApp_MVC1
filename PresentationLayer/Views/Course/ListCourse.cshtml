@@ -1,0 +1,25 @@
+﻿<!-- Envolvemos el modelo en una lista -->
+@model List<EntityLayer.CourseEntity>
+
+@{
+    ViewBag.Title = "ListCourse";
+    Layout = "~/Views/Layout/_LayoutMenu.cshtml";
+}
+
+<h2>ListCourse</h2>
+
+<table>
+    <tr>
+        <th>Identificador</th>
+        <th>Nombre</th>
+        <th>Catedrático</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.id_course</td>
+            <td>@item.course</td>
+            <td>@item.teacher.fullname</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,26 @@
+﻿@model EntityLayer.CourseEntity
+
+@{
+    ViewBag.Title = "AddCourse";
+    Layout = "~/Views/Layout/_LayoutMenu.cshtml";
+
+    var listTeachers = ViewBag.ListTeachers; // Llamamos al ViewBag de la lista
+}
+
+<h2>AddCourse</h2>
+
+<div>
+    @using (Html.BeginForm("InsertCourse", "Course", FormMethod.Post))
+    {
+        <input autofocus type="text" name="txtCourse" placeholder="Nombre del curso" /><br />
+    
+        <select name="cbxTeacher">
+            @foreach (var item in listTeachers)
+            {
+                <option value="@item.id_teacher">@item.first @item.last</option>
+            }
+        </select>
+        <br />
+        <input type="submit" value="Registrar Curso" />
+    }
+</div>
