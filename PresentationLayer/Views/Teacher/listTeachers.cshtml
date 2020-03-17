@@ -19,7 +19,7 @@
         <td>@item.id_teacher</td>
         <td>@item.first</td>
         <td>@item.last</td>
-        <td>@Html.ActionLink("Editar","EditTeacher", new { idTeacher = item.id_teacher })</td>
+        <td>@Html.ActionLink("Editar","EditTeacher", new { id = item.id_teacher })</td>
         <td>@Html.ActionLink("Eliminar", "DeleteTeacher", new { idTeacher = item.id_teacher })</td>
     </tr>
     }

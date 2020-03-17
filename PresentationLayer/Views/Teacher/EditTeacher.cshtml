@@ -8,10 +8,10 @@
 <h2>EditTeacher</h2>
 
 <div>
-    @using (Html.BeginForm("", "", FormMethod.Post))
+    @using (Html.BeginForm("UpdateTeacher", "Teacher", FormMethod.Post))
     {
-        <input type="number" name="txtId" placeholder="Identificador" value="@Model.id_teacher" autofocus /><br />
-        <input type="text" name="txtFirst" placeholder="Nombre" value="@Model.first" /><br />
+        <input disabled type="number" name="id" placeholder="Identificador" value="@Model.id_teacher" /><br />
+        <input type="text" name="txtFirst" placeholder="Nombre" value="@Model.first" autofocus /><br />
         <input type="text" name="txtLast" placeholder="Apellido" value="@Model.last" /><br />
         <input type="submit" value="Actualizar" /><br />
     }

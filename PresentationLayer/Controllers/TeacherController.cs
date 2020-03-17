@@ -54,9 +54,33 @@ namespace PresentationLayer.Controllers
             return Content(script);
         }
 
-        public ActionResult EditTeacher(int idTeacher)
+        public ActionResult EditTeacher(int id)
         {
-            return View(teacherLogic.searchTeacher(idTeacher));
+            return View(teacherLogic.searchTeacher(id));
+        }
+
+        public ActionResult UpdateTeacher(Int32 id, string txtFirst, string txtLast)
+        {
+            TeacherEntity teacher = new TeacherEntity();
+            teacher.id_teacher = id;
+            teacher.first = txtFirst;
+            teacher.last = txtLast;
+
+            String script = "";
+
+            if (teacherLogic.updateTeacher(teacher))
+            {
+                script = "<script languaje='javascript'>" +
+                            "window.location.href='/Teacher/ListTeachers'; " +
+                            "</script>";
+            } else
+            {
+                script = "<script languaje='javascript'>" +
+                            "alert('Registro no actualizado'); " +
+                            "</script>";
+            }
+
+            return Content(script);
         }
         
         public ActionResult DeleteTeacher(int idTeacher)
@@ -66,7 +90,6 @@ namespace PresentationLayer.Controllers
             if (teacherLogic.deleteTeacher(idTeacher))
             {
                 script = "<script languaje='javascript'>" +
-                            "alert('Profesor eliminado correctamente')" +
                             "window.location.href='/Teacher/ListTeachers'; " +
                          "</script>";
             }
