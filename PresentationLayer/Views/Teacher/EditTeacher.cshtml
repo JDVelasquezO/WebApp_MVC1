@@ -10,7 +10,7 @@
 <div>
     @using (Html.BeginForm("UpdateTeacher", "Teacher", FormMethod.Post))
     {
-        <input disabled type="number" name="id" placeholder="Identificador" value="@Model.id_teacher" /><br />
+        <input readonly type="number" name="id" placeholder="Identificador" value="@Model.id_teacher" /><br />
         <input type="text" name="txtFirst" placeholder="Nombre" value="@Model.first" autofocus /><br />
         <input type="text" name="txtLast" placeholder="Apellido" value="@Model.last" /><br />
         <input type="submit" value="Actualizar" /><br />

@@ -59,10 +59,10 @@ namespace PresentationLayer.Controllers
             return View(teacherLogic.searchTeacher(id));
         }
 
-        public ActionResult UpdateTeacher(Int32 id, string txtFirst, string txtLast)
+        public ActionResult UpdateTeacher(string id, string txtFirst, string txtLast)
         {
             TeacherEntity teacher = new TeacherEntity();
-            teacher.id_teacher = id;
+            teacher.id_teacher = Convert.ToInt32(id);
             teacher.first = txtFirst;
             teacher.last = txtLast;
 
