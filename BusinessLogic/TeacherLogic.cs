@@ -32,5 +32,10 @@ namespace BusinessLogic
         {
             return teacherData.updateTeacher(teacher);
         }
+
+        public bool deleteTeacher(int id)
+        {
+            return teacherData.deleteTeacher(id);
+        }
     }
 }

@@ -58,5 +58,26 @@ namespace PresentationLayer.Controllers
         {
             return View(teacherLogic.searchTeacher(idTeacher));
         }
+        
+        public ActionResult DeleteTeacher(int idTeacher)
+        {
+            string script = "";
+
+            if (teacherLogic.deleteTeacher(idTeacher))
+            {
+                script = "<script languaje='javascript'>" +
+                            "alert('Profesor eliminado correctamente')" +
+                            "window.location.href='/Teacher/ListTeachers'; " +
+                         "</script>";
+            }
+            else
+            {
+                script = "<script languaje='javascript'>" +
+                            "alert('No se pudo eliminar'); " +
+                         "</script>";
+            }
+
+            return Content(script);
+        }
     }
 }

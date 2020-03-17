@@ -156,5 +156,34 @@ namespace AccessDataLayer
 
             return response;
         }
+
+        public bool deleteTeacher(int id)
+        {
+            bool deleted = false;
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("del_teacher", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter id_teacher = new SqlParameter();
+                id_teacher.ParameterName = "@Identificador";
+                id_teacher.SqlDbType = SqlDbType.Int;
+                id_teacher.Value = id;
+
+                sqlCommand.Parameters.Add(id_teacher);
+                sqlCommand.ExecuteNonQuery();
+
+                deleted = true;
+
+            }
+            catch(Exception e)
+            {
+                throw;
+            }
+
+            return deleted;
+        }
     }
 }

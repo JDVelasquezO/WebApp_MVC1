@@ -104,10 +104,10 @@
     <None Include="packages.config" />
     <Content Include="Views\Layout\_LayoutMenu.cshtml" />
     <Content Include="Views\Teacher\Index.cshtml" />
-    <Content Include="Views\Teacher\listTeachers.cshtml" />
+    <Content Include="Views\Teacher\ListTeachers.cshtml" />
     <Content Include="Views\Teacher\AddTeachers.cshtml" />
     <Content Include="Views\Teacher\EditTeacher.cshtml" />
-    <Content Include="Views\Teacher\Test.cshtml" />
+    <Content Include="Views\View.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
