@@ -20,6 +20,7 @@
             <td>@item.id_course</td>
             <td>@item.course</td>
             <td>@item.teacher.fullname</td>
+            <td>@Html.ActionLink("Editar", "EditCourse", new { id = item.id_course })</td>
         </tr>
     }
 </table>

@@ -51,5 +51,40 @@ namespace PresentationLayer.Controllers
 
             return Content(script);
         }
+
+        public ActionResult EditCourse(int id)
+        {
+            List<TeacherEntity> listTeacher = new List<TeacherEntity>();
+            TeacherLogic teacherLogic = new TeacherLogic();
+            listTeacher = teacherLogic.listTeacher(); // Obtenemos la lista de todos los profesores
+            ViewBag.ListTeachers = listTeacher; // Lo guardamos en un ViewBag
+
+            return View(courseLogic.searchTeacher(id));
+        }
+
+        public ActionResult UpdateCourse(string id, string txtCourse, string cbxTeacher)
+        {
+            CourseEntity course = new CourseEntity();
+            course.id_course = Convert.ToInt32(id);
+            course.teacher.id_teacher = Convert.ToInt32(cbxTeacher);
+            course.course = txtCourse;
+
+            String script = "";
+
+            if (courseLogic.updateTeacher(course))
+            {
+                script = "<script languaje='javascript'>" +
+                            "window.location.href='/Course/ListCourse'; " +
+                            "</script>";
+            }
+            else
+            {
+                script = "<script languaje='javascript'>" +
+                            "alert('Registro no actualizado'); " +
+                            "</script>";
+            }
+
+            return Content(script);
+        }
     }
 }

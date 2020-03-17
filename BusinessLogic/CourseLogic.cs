@@ -22,5 +22,15 @@ namespace BusinessLogic
         {
             return courseLogic.addCourse(course);
         }
+
+        public CourseEntity searchTeacher(int id)
+        {
+            return courseLogic.searchTeacher(id);
+        }
+
+        public bool updateTeacher(CourseEntity course)
+        {
+            return courseLogic.updateTeacher(course);
+        }
     }
 }

@@ -1,0 +1,29 @@
+﻿@model EntityLayer.CourseEntity
+
+@{
+    ViewBag.Title = "EditCourse";
+    Layout = "~/Views/Layout/_LayoutMenu.cshtml";
+
+    var listTeachers = ViewBag.ListTeachers; // Llamamos al ViewBag de la lista
+}
+
+<h2>EditCourse</h2>
+
+<div>
+    @using (Html.BeginForm("UpdateCourse", "Course", FormMethod.Post))
+    {
+        <input readonly type="number" value="@Model.id_course" name="id" /><br />
+        <input autofocus type="text" value="@Model.course" name="txtCourse" placeholder="Nombre del curso" /><br />
+        <input readonly type="text" value="@Model.teacher.fullname" placeholder="Nombre del Catedratico" /><br />
+
+        <p>Cambiar Profesor:</p>
+        <select name="cbxTeacher">
+            @foreach (var item in listTeachers)
+            {
+                <option value="@item.id_teacher">@item.first @item.last</option>
+            }
+        </select>
+        <br />
+        <input type="submit" value="Actualizar Curso" />
+    }
+</div>

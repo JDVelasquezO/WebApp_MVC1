@@ -81,5 +81,82 @@ namespace AccessDataLayer
 
             return response;
         }
+
+        public CourseEntity searchTeacher(int id)
+        {
+            CourseEntity course = new CourseEntity();
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("search_course", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter id_parameter = new SqlParameter();
+                id_parameter.ParameterName = "@idCourse";
+                id_parameter.SqlDbType = SqlDbType.Int;
+                id_parameter.Value = id;
+
+                sqlCommand.Parameters.Add(id_parameter);
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                sqlDataReader.Read();
+
+                if (sqlDataReader.HasRows)
+                {
+                    course.id_course = Convert.ToInt32(sqlDataReader["ID"]);
+                    course.course = sqlDataReader["Nombre"].ToString();
+                    course.teacher.fullname = sqlDataReader["Profesor"].ToString();
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return course;
+        }
+
+        public bool updateTeacher(CourseEntity course)
+        {
+            bool response = false;
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("update_course", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter id_parameter = new SqlParameter();
+                id_parameter.ParameterName = "@idCourse";
+                id_parameter.SqlDbType = SqlDbType.Int;
+                id_parameter.Value = course.id_course;
+
+                SqlParameter p_course = new SqlParameter();
+                p_course.ParameterName = "@Course";
+                p_course.SqlDbType = SqlDbType.VarChar;
+                p_course.Size = 20;
+                p_course.Value = course.course;
+
+                SqlParameter p_id_teacher = new SqlParameter();
+                p_id_teacher.ParameterName = "@idTeacher";
+                p_id_teacher.SqlDbType = SqlDbType.Int;
+                p_id_teacher.Value = course.teacher.id_teacher;
+
+                sqlCommand.Parameters.Add(id_parameter);
+                sqlCommand.Parameters.Add(p_course);
+                sqlCommand.Parameters.Add(p_id_teacher);
+
+                sqlCommand.ExecuteNonQuery();
+
+                response = true;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return response;
+        }
     }
 }
