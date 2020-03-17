@@ -1,0 +1,17 @@
+﻿@model EntityLayer.TeacherEntity
+
+@{
+    ViewBag.Title = "AddTeachers";
+    Layout = "~/Views/Layout/_LayoutMenu.cshtml";
+}
+
+<h2>AddTeachers</h2>
+
+<div>
+    @using (Html.BeginForm("InsertTeacher", "Teacher", FormMethod.Post)) // Envía datos al método del controlador
+    {
+        <input type="text" name="txtFirst" placeholder="Nombre" autofocus /><br />
+        <input type="text" name="txtLast" placeholder="Apellido"/><br />
+        <input type="submit" value="Registrar" /><br />
+    }
+</div>

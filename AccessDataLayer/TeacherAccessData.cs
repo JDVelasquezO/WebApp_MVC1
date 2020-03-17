@@ -41,5 +41,42 @@ namespace AccessDataLayer
 
             return list;
         }
+
+        public bool addTeacher(TeacherEntity teacher)
+        {
+            bool response = false;
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("add_teacher", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter p_first = new SqlParameter();
+                p_first.ParameterName = "@Nombre";
+                p_first.SqlDbType = SqlDbType.VarChar;
+                p_first.Size = 20;
+                p_first.Value = teacher.first;
+
+                SqlParameter p_last = new SqlParameter();
+                p_last.ParameterName = "@Apellido";
+                p_last.SqlDbType = SqlDbType.VarChar;
+                p_last.Size = 20;
+                p_last.Value = teacher.last;
+
+                sqlCommand.Parameters.Add(p_first);
+                sqlCommand.Parameters.Add(p_last);
+
+                sqlCommand.ExecuteNonQuery();
+
+                response = true;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return response;
+        }
     }
 }

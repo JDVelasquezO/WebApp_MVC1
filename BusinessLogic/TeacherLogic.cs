@@ -17,5 +17,10 @@ namespace BusinessLogic
         {
             return teacherData.listTeachers();
         }
+
+        public bool addTeacher(TeacherEntity teacher)
+        {
+            return teacherData.addTeacher(teacher);
+        }
     }
 }
